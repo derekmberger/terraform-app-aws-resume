@@ -59,7 +59,7 @@ variable "environment" {
 variable "org_name" {
   description = "The organization prefix"
   type        = string
-  default     = "biotronic"
+  default     = "biotornic"
 }
 
 ############################
