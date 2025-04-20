@@ -1,9 +1,9 @@
-resource "aws_ecr_repository" "ecr_repo" {
-  name = var.service_name
-  image_scanning_configuration {
-    scan_on_push = true
-  }
-}
+# resource "aws_ecr_repository" "ecr_repo" {
+#   name = var.service_name
+#   image_scanning_configuration {
+#     scan_on_push = true
+#   }
+# }
 
 resource "aws_ecs_service" "service" {
   name                               = local.prefix
@@ -61,8 +61,8 @@ resource "aws_ecs_task_definition" "task_def" {
   family                   = local.prefix
   network_mode             = "awsvpc"
   requires_compatibilities = ["EC2"]
-  cpu                      = 512
-  memory                   = 512
+  cpu                      = 1024
+  memory                   = 960
   task_role_arn            = aws_iam_role.task_role.arn
   execution_role_arn       = data.terraform_remote_state.ecs.outputs.iamrole_ecs_exec_arn
 
