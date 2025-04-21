@@ -63,8 +63,8 @@ resource "aws_ecs_task_definition" "task_def" {
   family                   = local.prefix
   network_mode             = "awsvpc"
   requires_compatibilities = ["EC2"]
-  cpu                      = 1024
-  memory                   = 960
+  cpu                      = 768
+  memory                   = 512
   task_role_arn            = aws_iam_role.task_role.arn
   execution_role_arn       = data.terraform_remote_state.ecs.outputs.iamrole_ecs_exec_arn
 
