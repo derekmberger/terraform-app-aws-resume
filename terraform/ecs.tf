@@ -31,10 +31,10 @@ resource "aws_ecs_service" "service" {
     container_port   = 3000
   }
 
-  capacity_provider_strategy {
-    capacity_provider = data.terraform_remote_state.ecs.outputs.ecs_capacity_provider_name
-    weight            = 1
-  }
+  # capacity_provider_strategy {
+  #   capacity_provider = data.terraform_remote_state.ecs.outputs.ecs_capacity_provider_name
+  #   weight            = 1
+  # }
 
   ordered_placement_strategy {
     type  = "binpack"
