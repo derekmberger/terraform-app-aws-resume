@@ -1,5 +1,6 @@
 resource "aws_ecr_repository" "ecr_repo" {
-  name = var.service_name
+  #name = var.service_name
+  name = "react-resume"
   image_scanning_configuration {
     scan_on_push = true
   }
